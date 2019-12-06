@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/sample.css">
+  <title>おみくじ</title>
+</head>
+
+<body>
+  <header>
+    <h1>おみくじ</h1>
+  </header>
+
+  <main>
+    <ul>
+      <li id="pull">おみくじを引く</li>
+    </ul>
+    <p id="echo">結果は？</p>
+    <!-- 結果は？を残したままにしたい場合、以下文を挿入。 結果は？を消して結果表示させる場合は、以下文を削除-->
+    <p id="result"></p>
+  </main>
+
+  <footer>フッター</footer>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+    $(function () {
+      //ここに自分の処理を追加
+      $('#pull').on('click', function () {
+        const array = ['大吉', '中吉', '小吉', '凶', '大凶'];
+        const randomNumber = Math.floor(Math.random() * 5);
+        $('#result').html(array[randomNumber]);
+        // 結果は？を消さない場合、上部分でresultを追加し、id名を#resultとする
+      });
+    });
+
+
+
+  </script>
+
+</body>
+
+</html>
